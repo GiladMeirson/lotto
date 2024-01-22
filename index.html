@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/index.js"></script>
+
+
+<link rel="stylesheet" href="./style/index.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="stats">
+            <h1 id="money">כסף: 0</h1>
+            <h2 id="combinations">קומבינציות: 0</h2>
+            <h2>מתוך סהכ קומבינציות: 16,273,488</h2>
+        </div>
+
+        <button style="float: left;" class="resetbtn">איפוס</button>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li onclick="RenderCard('Card-PH',6)">טופס בודד</li>
+            <li>
+                <span onclick="RenderCard('Card-PH')" >שיטתי</span>
+                <select name="sys" id="sysIN">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </li>
+            <li onclick="showmyNumbers()">הכרטיסים שלי</li>
+            <li title="מגריל מספרים מנצחים ומגריל בשבילך עד שאתה מנצח">שחרר אותי</li>
+            <li onclick="GenerateLotto()" class="btn">תגריל לוטו</li>
+
+
+            <!-- Add more items as needed -->
+        </ul>
+    </div>
+
+    <div id="Card-PH">
+
+    </div>
+   
+        <!-- EXAMPLE WIN BALL  SNIPP -->
+      <div id="winBalls" class="rowWinBall">
+
+        <div id="ball-1" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/blue.png" alt="">
+            <div  class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-2" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/red.png" alt="">
+            <div class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-3" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/blue.png" alt="">
+            <div class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-4" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/red.png" alt="">
+            <div class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-5" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/blue.png" alt="">
+            <div class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-6" class="winBallImg-wrap">
+            <img class="winBallImg" src="./assets/red.png" alt="">
+            <div class="centered-content">
+              <p>37</p>
+            </div>
+        </div>
+        <div id="ball-7" class="winBallImg-wrap">
+          <img class="winBallImg" src="./assets/yellow.png" alt="">
+          <div class="centered-content">
+            <p>7</p>
+          </div>
+      </div>
+
+
+
+      </div>
+
+
+      <div id="winDiv">
+        <img src="./assets/raining-money.gif" alt="">
+        <div id="wingifWrap">
+          <img id="wingif" src="./assets/wingif.gif" alt="">
+
+        </div>
+      </div>
+
+      <div id="looseDiv">
+        <p id="timepass">זמן - 00:00</p>
+        <div id="looseDivWr">
+          <div id="userIRow">
+            <input type="text" maxlength="2" name=""  id="userI1">
+            <input type="text" maxlength="2" name=""  id="userI2">
+            <input type="text" maxlength="2" name=""  id="userI3">
+            <input type="text" maxlength="2" name=""  id="userI4">
+            <input type="text" maxlength="2" name=""  id="userI5">
+            <input type="text" maxlength="2" name=""  id="userI6">
+            <input type="text" maxlength="1" name=""  id="userI7">
+          </div>
+  
+          <div id="winIRow">
+            <input type="text" name="" maxlength="2" disabled id="winI1">
+            <input type="text" name="" maxlength="2" disabled id="winI2">
+            <input type="text" name="" maxlength="2" disabled id="winI3">
+            <input type="text" name="" maxlength="2" disabled id="winI4">
+            <input type="text" name="" maxlength="2" disabled id="winI5">
+            <input type="text" name="" maxlength="2" disabled id="winI6">
+            <input type="text" name="" maxlength="1" disabled id="winI7">
+          </div>
+        </div>
+      </div>
+
+
+      <div id="sounds" style="display: none;">
+        <audio id="WheelSound" src="./assets/Spinning Prize Wheel Sound Effect.mp3"></audio>
+        <audio id="WINNERSound" src="./assets/WINNER Sound Effect.mp3"></audio>
+      </div>
+
+
+</body>
+</html>
